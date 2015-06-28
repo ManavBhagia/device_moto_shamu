@@ -183,4 +183,7 @@ EXTENDED_FONT_FOOTPRINT := true
 # CMHW
 BOARD_HARDWARE_CLASS := device/moto/shamu/cmhw
 
+# Healthd
+HEALTHD_ENABLE_TRICOLOR_LED := true
+
 -include vendor/motorola/shamu/BoardConfigVendor.mk
