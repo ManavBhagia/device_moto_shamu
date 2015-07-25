@@ -35,7 +35,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/moto/shamu/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
     device/moto/shamu/apq8084-taiko-tfa9890_stereo_co_Button_Jack.kl:system/usr/keylayout/apq8084-taiko-tfa9890_stereo_co_Button_Jack.kl \
-	device/moto/shamu/atmel_mxt_ts.idc:system/usr/idc/atmel_mxt_ts.idc
+    device/moto/shamu/atmel_mxt_ts.idc:system/usr/idc/atmel_mxt_ts.idc
 
 PRODUCT_COPY_FILES += \
     device/moto/shamu/media_profiles.xml:system/etc/media_profiles.xml \
@@ -161,14 +161,30 @@ PRODUCT_PROPERTY_OVERRIDES += \
     fmas.spkr_2ch=35,25 \
     fmas.spkr_angles=10 \
     fmas.spkr_sgain=0 \
+    keyguard.no_require_sim=true \
     media.aac_51_output_enabled=true \
     persist.audio.dualmic.config=endfire \
     persist.audio.fluence.voicecall=true \
     persist.audio.fluence.voicerec=false \
-    persist.audio.fluence.speaker=false 
+    persist.audio.fluence.speaker=false \
+    persist.data.qmi.adb_logmask=0 \
+    persist.radio.apm_sim_not_pwdn=1 \
+    persist.radio.no_wait_for_card=1 \
+    persist.radio.sib16_support=1 \
+    ro.audio.monitorRotation=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.isUsbOtgEnabled=1
+
+# Optimizations
+PRODUCT_PROPERTY_OVERRIDES += \
+    pm.sleep.mode=1 \
+    wifi.supplicant_scan_interval=180 \
+    windowsmgr.max_events_per_sec=150 \
+    debug.performance.tuning=1 \
+    ro.ril.power_collapse=1 \
+    persist.service.lgospd.enable=0 \
+    persist.service.pcsync.enable=0 \
 
 # Audio effects
 PRODUCT_PACKAGES += \
@@ -268,13 +284,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # LTE, CDMA, GSM/WCDMA
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.ril.force_eri_from_xml=true \
     ro.telephony.default_network=10 \
     ro.telephony.get_imsi_from_sim=true \
     telephony.lteOnCdmaDevice=1
 
 # Allow carrier tethering
 PRODUCT_PROPERTY_OVERRIDES += \
-net.tethering.noprovisioning=true
+    net.tethering.noprovisioning=true
 
 # SIM based FSG loading & MCFG activation
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -358,10 +375,6 @@ $(call inherit-product-if-exists, vendor/qcom/gpu/msm8x84/msm8x84-gpu-vendor.mk)
 # setup dm-verity configs.
 PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/platform/msm_sdcc.1/by-name/system
 $(call inherit-product, build/target/product/verity.mk)
-
-# setup scheduler tunable
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.qualcomm.perf.cores_online=2
 
 PRODUCT_PACKAGES += \
     power.shamu
