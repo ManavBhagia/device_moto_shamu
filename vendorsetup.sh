@@ -15,4 +15,5 @@
 #
 
 add_lunch_combo aosp_shamu-userdebug
-add_lunch_combo eos_shamu-userdebug
+add_lunch_combo benzo_shamu-userdebug
+add_lunch_combo benzo_shamu-user

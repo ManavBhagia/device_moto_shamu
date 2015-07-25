@@ -30,6 +30,7 @@
 #include <stdbool.h>
 
 #define LOG_TAG "PowerHAL"
+#define LOG_NDEBUG 0
 #include <utils/Log.h>
 
 #include <hardware/hardware.h>

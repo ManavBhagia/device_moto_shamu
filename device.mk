@@ -24,18 +24,15 @@ PRODUCT_COPY_FILES += \
     device/moto/shamu/init.shamu.power.rc:root/init.shamu.power.rc \
     device/moto/shamu/init.shamu.usb.rc:root/init.shamu.usb.rc \
     device/moto/shamu/fstab.shamu:root/fstab.shamu \
-    device/moto/shamu/ueventd.shamu.rc:root/ueventd.shamu.rc 
-
+    device/moto/shamu/ueventd.shamu.rc:root/ueventd.shamu.rc \
+    device/moto/shamu/bC/init.benzo.rc:root/init.benzo.rc \
+    device/moto/shamu/bC/benzo-post-boot.sh:root/sbin/benzo-post-boot.sh
 
 # Input device files for shamu
 PRODUCT_COPY_FILES += \
     device/moto/shamu/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
     device/moto/shamu/apq8084-taiko-tfa9890_stereo_co_Button_Jack.kl:system/usr/keylayout/apq8084-taiko-tfa9890_stereo_co_Button_Jack.kl \
 	device/moto/shamu/atmel_mxt_ts.idc:system/usr/idc/atmel_mxt_ts.idc
-
-PRODUCT_COPY_FILES += \
-    device/moto/shamu/audio_policy.conf:system/etc/audio_policy.conf \
-    device/moto/shamu/audio_effects.conf:system/etc/audio_effects.conf
 
 PRODUCT_COPY_FILES += \
     device/moto/shamu/media_profiles.xml:system/etc/media_profiles.xml \

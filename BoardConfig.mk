@@ -23,19 +23,18 @@ TARGET_CPU_VARIANT := krait
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
 TARGET_NO_BOOTLOADER := true
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-5.1
-TARGET_GCC_VERSION_EXP := 4.9
-# Inline kernel building		
-TARGET_KERNEL_CONFIG := hells_defconfig		
-TARGET_KERNEL_SOURCE := kernel/moto/shamu		
-BOARD_KERNEL_IMAGE_NAME := zImage-dtb		
+
+# Inline kernel building
+TARGET_KERNEL_CONFIG := benzo_defconfig
+TARGET_KERNEL_SOURCE := kernel/moto/shamu
+BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE :=  2048
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET     := 0x02000000
 
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=shamu msm_rtb.filter=0x37 ehci-hcd.park=3 utags.blkdev=/dev/block/platform/msm_sdcc.1/by-name/utags utags.backup=/dev/block/platform/msm_sdcc.1/by-name/utagsBackup coherent_pool=8M
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.selinux=permissive androidboot.hardware=shamu msm_rtb.filter=0x37 ehci-hcd.park=3 utags.blkdev=/dev/block/platform/msm_sdcc.1/by-name/utags utags.backup=/dev/block/platform/msm_sdcc.1/by-name/utagsBackup coherent_pool=8M
 BOARD_KERNEL_CMDLINE += vmalloc=400M
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset BOARD_RAMDISK_OFFSET --tags_offset BOARD_KERNEL_TAGS_OFFSET
 
@@ -100,6 +99,7 @@ DONT_DEXPREOPT_PREBUILTS := true
 
 TARGET_TOUCHBOOST_FREQUENCY := 1500
 TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16793600
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2147483648
@@ -178,6 +178,9 @@ BOARD_HAS_AUDIO_DSP := true
 USE_DEVICE_SPECIFIC_CAMERA:= true
 
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.shamu
+
+# Enable ion compatibility
+TARGET_USE_ION_COMPAT := true
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
