@@ -176,6 +176,12 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     libqcomvoiceprocessingdescriptors
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    lpa.decode=false \
+    lpa.releaselock=false \
+    lpa.use-stagefright=false \
+    tunnel.decode=false
+
 PRODUCT_PACKAGES += \
     libqomx_core \
     libmm-qcamera \
