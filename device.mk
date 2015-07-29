@@ -289,6 +289,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.get_imsi_from_sim=true \
     telephony.lteOnCdmaDevice=1
 
+# Miracast support
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.debug.wfd.enable=1
+
 # Allow carrier tethering
 PRODUCT_PROPERTY_OVERRIDES += \
     net.tethering.noprovisioning=true
