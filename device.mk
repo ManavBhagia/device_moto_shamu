@@ -28,7 +28,6 @@ PRODUCT_COPY_FILES += \
     device/moto/shamu/init.shamu.usb.rc:root/init.shamu.usb.rc \
     device/moto/shamu/fstab.shamu:root/fstab.shamu \
     device/moto/shamu/ueventd.shamu.rc:root/ueventd.shamu.rc \
-    device/moto/shamu/bC/init.benzo.rc:root/init.benzo.rc \
     device/moto/shamu/bC/benzo-post-boot.sh:root/sbin/benzo-post-boot.sh
 
 # Input device files for shamu
