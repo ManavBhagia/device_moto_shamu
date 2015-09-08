@@ -162,6 +162,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.isUsbOtgEnabled=1
 
+# Optimizations
+PRODUCT_PROPERTY_OVERRIDES += \
+    pm.sleep.mode=1 \
+    wifi.supplicant_scan_interval=180 \
+    windowsmgr.max_events_per_sec=150 \
+    debug.performance.tuning=1 \
+    ro.ril.power_collapse=1 \
+    persist.service.lgospd.enable=0 \
+    persist.service.pcsync.enable=0 \
+    keyguard.no_require_sim=true
+
 # ART
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-flags=--no-watch-dog
@@ -362,10 +373,6 @@ $(call inherit-product-if-exists, vendor/qcom/gpu/msm8x84/msm8x84-gpu-vendor.mk)
 # setup dm-verity configs.
 PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/platform/msm_sdcc.1/by-name/system
 $(call inherit-product, build/target/product/verity.mk)
-
-# setup scheduler tunable
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.qualcomm.perf.cores_online=2
 
 PRODUCT_PACKAGES += \
     power.shamu
