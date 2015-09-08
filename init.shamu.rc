@@ -17,6 +17,7 @@
 import init.shamu.usb.rc
 import init.shamu.power.rc
 import init.shamu.diag.rc
+import init.benzo.rc
 
 on early-init
     mkdir /firmware 0771 system system
@@ -46,6 +47,10 @@ on init
     symlink /storage/emulated/legacy /mnt/sdcard
     symlink /storage/emulated/legacy /storage/sdcard0
     symlink /mnt/shell/emulated/0 /storage/emulated/legacy
+
+    # Adaptive LMK
+    write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
+    write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 53059
 
 on fs
     mount_all fstab.shamu
@@ -179,6 +184,10 @@ on boot
 
     chmod 0444 /sys/devices/platform/msm_hsusb/gadget/usb_state
 
+    # e/frandom permissions
+    chmod 444 /dev/erandom
+    chmod 444 /dev/frandom
+
     # Allow QMUX daemon to assign port open wait time
     chown radio radio /sys/devices/virtual/hsicctl/hsicctl0/modem_wait
 
@@ -246,6 +255,8 @@ on boot
     chown media media /sys/devices/c55_ctrl/gpio_c55_int/value
     chown media media /sys/devices/c55_ctrl/gpio_core/value
     chown media media /sys/devices/c55_ctrl/gpio_reset/value
+
+    chmod 0644 /proc/cmdline
 
     # LED permissions
     chmod 664 /sys/class/leds/red/brightness
@@ -588,6 +599,7 @@ service qseecomd /system/bin/qseecomd
 service mpdecision /system/bin/mpdecision --avg_comp
    class main
    user root
+   disabled
 
 service ss_ramdump /system/bin/subsystem_ramdump
     class main
