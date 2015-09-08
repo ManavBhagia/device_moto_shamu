@@ -280,6 +280,16 @@ on boot
     chmod 0644 /sys/android_touch/vib_strength
     write /sys/android_touch/vib_strength 40
 
+    # Adreno Idler
+    chown system system /sys/module/adreno_idler/parameters/adreno_idler_active
+    chmod 0644 /sys/module/adreno_idler/parameters/adreno_idler_active
+    chown system system /sys/module/adreno_idler/parameters/adreno_idler_downdifferential
+    chmod 0644 /sys/module/adreno_idler/parameters/adreno_idler_downdifferential
+    chown system system /sys/module/adreno_idler/parameters/adreno_idler_idewait
+    chmod 0644 /sys/module/adreno_idler/parameters/adreno_idler_idewait
+    chown system system /sys/module/adreno_idler/parameters/adreno_idler_ideworkload
+    chmod 0644 /sys/module/adreno_idler/parameters/adreno_idler_ideworkload
+
     # Display color calibration
     chown system system /sys/devices/platform/kcal_ctrl.0/kcal
     chown system system /sys/devices/platform/kcal_ctrl.0/kcal_enable
