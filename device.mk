@@ -35,10 +35,6 @@ PRODUCT_COPY_FILES += \
 	device/moto/shamu/atmel_mxt_ts.idc:system/usr/idc/atmel_mxt_ts.idc
 
 PRODUCT_COPY_FILES += \
-    device/moto/shamu/audio_policy.conf:system/vendor/etc/audio_policy.conf \
-    device/moto/shamu/audio_effects.conf:system/etc/audio_effects.conf
-
-PRODUCT_COPY_FILES += \
     device/moto/shamu/media_profiles.xml:system/etc/media_profiles.xml \
     device/moto/shamu/media_codecs.xml:system/etc/media_codecs.xml
 
