@@ -19,8 +19,8 @@ TARGET_VENDOR := moto
 DEVICE_PACKAGE_OVERLAYS += device/moto/shamu/overlay-cm
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-BUILD_FINGERPRINT=google/shamu/shamu:5.1.1/LVY48E/2116406:user/release-keys \
-PRIVATE_BUILD_DESC="shamu-user 5.1.1 LVY48E 2116406 release-keys" 
+    BUILD_FINGERPRINT="google/shamu/shamu:5.1.1/LMY48M/2167285:user/release-keys" \
+    PRIVATE_BUILD_DESC="shamu-user 5.1.1 LMY48M 2167285 release-keys"
 
 # Copy device specific prebuilt files.
 PRODUCT_COPY_FILES += \
