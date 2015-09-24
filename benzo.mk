@@ -15,7 +15,6 @@ PRODUCT_BRAND := google
 PRODUCT_MODEL := Nexus 6
 PRODUCT_MANUFACTURER := motorola
 
-TARGET_VENDOR := moto
 DEVICE_PACKAGE_OVERLAYS += device/moto/shamu/overlay-cm
 
 PRODUCT_BUILD_PROP_OVERRIDES += \

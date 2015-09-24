@@ -173,9 +173,12 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 
 BOARD_HAS_AUDIO_DSP := true
 
-USE_DEVICE_SPECIFIC_CAMERA:= true
+USE_DEVICE_SPECIFIC_CAMERA := true
 
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.shamu
+
+# Enable ion compatibility
+TARGET_USE_ION_COMPAT := true
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
