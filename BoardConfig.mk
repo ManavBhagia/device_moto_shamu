@@ -175,7 +175,7 @@ BOARD_HAS_AUDIO_DSP := true
 
 USE_DEVICE_SPECIFIC_CAMERA := true
 
-BOARD_HAL_STATIC_LIBRARIES := libdumpstate.shamu
+BOARD_HAL_STATIC_LIBRARIES := libdumpstate.shamu libhealthd.shamu
 
 # Enable ion compatibility
 TARGET_USE_ION_COMPAT := true
