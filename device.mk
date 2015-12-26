@@ -181,6 +181,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.facelock.est_max_time=600 \
     ro.facelock.use_intro_anim=false
 
+# enable lazy dexopt
+persist.sys.lazy.dexopt=true
+
 # Audio effects
 PRODUCT_PACKAGES += \
     libqcomvisualizer \
