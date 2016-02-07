@@ -105,6 +105,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/moto/shamu/old-apns-conf.xml:system/etc/old-apns-conf.xml
 
+# Add swap activation script (workaround for the time being)
+PRODUCT_COPY_FILES += \
+    device/moto/shamu/swapon.sh:system/xbin/swapon.sh
+
 # This device is 560dpi.  However the platform doesn't
 # currently contain all of the bitmaps at 560dpi density so
 # we do this little trick to fall back to the xxhdpi version
