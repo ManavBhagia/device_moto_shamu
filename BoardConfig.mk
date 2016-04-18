@@ -71,6 +71,8 @@ WIFI_DRIVER_FW_PATH_STA     := "/vendor/firmware/fw_bcmdhd.bin"
 WIFI_BUS := PCIE
 #BOARD_USES_SECURE_SERVICES := true
 
+BOARD_SUPPORTS_SOUND_TRIGGER := true
+
 #Bluetooth defines
 BOARD_HAVE_BLUETOOTH_BCM := true
 ifeq ($(TARGET_PRODUCT),bt_shamu)
